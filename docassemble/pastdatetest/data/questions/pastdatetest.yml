@@ -1,0 +1,27 @@
+---
+
+---
+question: |
+  What is the date you're thinking?
+subquestion: |
+  Please enter a date in the past
+fields: 
+  - no label: mydate
+    datatype: date
+
+---
+code: |
+  def past_today(datetocheck):
+    if datetocheck < today():
+      return "Good job, the date was in the past"
+    else: 
+      return "Wait a minute, the date was in the future"
+---
+mandatory: true
+question: |
+  The date you input was ${mydate}
+subquestion: |
+  Did you follow instructions? Let's find out:
+  ${past_today(mydate)}
+
+  
